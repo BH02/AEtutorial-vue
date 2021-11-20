@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     home
-    <HelloWorld msg="这里是BH的项目"/>
+    <HelloWorld msg='innerMsg'/>
   </div>
 </template>
 
@@ -12,6 +12,13 @@ export default {
   name: 'Home',
   components: {
     HelloWorld
+  },
+  data(){
+    return{
+    }
+  },
+  methods:{
+
   }
 }
 </script>
