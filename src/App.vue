@@ -87,7 +87,7 @@ header>.box{
     height: 80px;
 }
 footer{
-    width: 100vw;
+    width: 100%;
     height: 150px;
     background-color: rgb(35,35,35);
     border-top: 2px solid rgb(187,187,187);
