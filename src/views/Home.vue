@@ -1,5 +1,5 @@
 <template>
-  <div class="home br">
+  <div class="home">
     <div class="transparent br">
       <div class="top br">
         <searchBar></searchBar>
