@@ -6,6 +6,23 @@
                 <img src="./assets/Db1.png" alt="AE icon">
                 <!-- <span>After effcts</span> -->
             </div>
+            <Slide right>
+                <router-link to="/">
+                    <span>首页</span>
+                </router-link>
+                <router-link to="/about">
+                    <span>About</span>
+                </router-link>
+                <router-link to="/">
+                    <span>预留位置</span>
+                </router-link>
+                <router-link to="/">
+                    <span>预留位置</span>
+                </router-link>
+                <router-link to="/">
+                    <span>预留位置</span>
+                </router-link>
+            </Slide>
             <div class="navBar">
                 <ul>
                     <router-link to="/">首页</router-link>
@@ -17,7 +34,7 @@
             </div>
         </div>
     </header>
-
+    <div class="blo"></div>
     <router-view/>
     
     <footer>
@@ -27,6 +44,18 @@
     </footer>
   </div>
 </template>
+
+<script>
+import { Slide } from 'vue-burger-menu'  // import the CSS transitions you wish to use, in this case we are using `Slide`
+
+export default {
+    components: {
+        Slide // Register your component
+    }
+}
+
+</script>
+
 
 <style>
 *{
@@ -44,16 +73,18 @@
 header{
     width: 100vw;
     height: 80px;
-    margin-bottom: 70px;
+    margin-bottom: 8px;
     box-shadow: 0px 0px 20px -10px black;
-
+    position: fixed;
+    z-index: 999;
+    background-color: white;
 }
 header>.box{
     height: 80px;
 }
-main{
-    width: 90vw;
-    margin: 0 auto;
+.blo{
+    width: 100vw;
+    height: 80px;
 }
 footer{
     width: 100vw;
@@ -65,6 +96,7 @@ footer{
     width: 90vw;
     height: 100%;
     margin: 0 auto;
+    min-width: 600px;
 }
 footer>.box{
     text-align: center;
@@ -106,5 +138,21 @@ footer>.box>a{
 }
 .icon>img{
     margin: 10px 20px;
+}
+.bm-burger-button{
+    display: none;
+    right: 5vw !important;
+    top: 30px !important;
+}
+.bm-item-list>a>span{
+    min-width: 100px !important;
+}
+@media screen and (max-width:600px) {
+    .navBar{
+        display: none;
+    }
+    .bm-burger-button{
+        display: block;
+    }
 }
 </style>
