@@ -1,7 +1,7 @@
 <template>
-  <div class="conBox">
-    <div class="red"></div>
-    <div class="tittle">这里是标题</div>
+  <div class="conBox br">
+    <div class="red br"></div>
+    <div class="tittle br">这里是标题</div>
     <div class="words">文章内容</div>
     <div class="btn">详情</div>
   </div>
@@ -14,11 +14,13 @@ export default {
 </script>
 
 <style scoped>
+.br{
+  border-radius: 1vw;
+}
 .conBox{
   width: 44%;
   height: 500px;
   margin: 20px; 
-  border-radius: 1vw;
   background-color: rgba(255, 255, 255, 10%);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(0, 0, 0, 20%);
@@ -34,14 +36,12 @@ export default {
   height: 80px;
   background-color: red;
   display: inline-block;
-  border-radius: 1vw;
   margin-right: 10px;
 }
 .tittle{
   width: 70%;
   height: 40px;
   display: inline-block;
-  border-radius: 1vw;
   font-size: 2rem;
   color: white;
 }
@@ -64,6 +64,10 @@ export default {
   font-size: 20px;
   float: right;
   margin-right: 25px;
+  transition: .2s linear;
+}
+.btn:hover{
+  background-color: rgb(95, 95, 255);
 }
 @media screen and (max-width:1150px) {
   .conBox{
