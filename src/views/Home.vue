@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    home
+    <HelloWorld msg="这里是BH的项目"/>
   </div>
 </template>
 
