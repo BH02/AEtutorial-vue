@@ -42,7 +42,7 @@
 }
 
 header{
-    width: 100%;
+    width: 100vw;
     height: 80px;
     margin-bottom: 70px;
     box-shadow: 0px 0px 20px -10px black;
@@ -52,17 +52,17 @@ header>.box{
     height: 80px;
 }
 main{
-    width: 90%;
+    width: 90vw;
     margin: 0 auto;
 }
 footer{
-    width: 100%;
+    width: 100vw;
     height: 150px;
     background-color: rgb(35,35,35);
     border-top: 2px solid rgb(187,187,187);
 }
 .box{
-    width: 90%;
+    width: 90vw;
     height: 100%;
     margin: 0 auto;
 }
