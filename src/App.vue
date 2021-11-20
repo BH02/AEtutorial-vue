@@ -8,8 +8,8 @@
             </div>
             <div class="navBar">
                 <ul>
-                    <a href="index.html">首页</a>
-                    <a href="">预留位置</a>
+                    <router-link to="/">首页</router-link>
+                    <router-link to="/about">预留位置</router-link>
                     <a href="">预留位置</a>
                     <a href="">预留位置</a>
                     <a href="">预留位置</a>
