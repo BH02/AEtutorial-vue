@@ -9,10 +9,10 @@
             <div class="navBar">
                 <ul>
                     <router-link to="/">首页</router-link>
-                    <router-link to="/about">预留位置</router-link>
-                    <a href="">预留位置</a>
-                    <a href="">预留位置</a>
-                    <a href="">预留位置</a>
+                    <router-link to="/about">About</router-link>
+                    <router-link to="/">预留位置</router-link>
+                    <router-link to="/">预留位置</router-link>
+                    <router-link to="/">预留位置</router-link>
                 </ul>
             </div>
         </div>
