@@ -37,7 +37,7 @@ export default {
   background-size: 120%;
   background-position-x: -10vw;
   background-position-y: -10vh;
-  min-width: 1000px;
+  /* min-width: 1000px; */
 }
 .transparent{
   width: 90vw;
