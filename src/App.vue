@@ -1,14 +1,38 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <header>
+        <div class="box">
+            <div class="icon">
+                <img src="./assets/Db1.png" alt="AE icon">
+                <!-- <span>After effcts</span> -->
+            </div>
+            <div class="navBar">
+                <ul>
+                    <a href="index.html">首页</a>
+                    <a href="">预留位置</a>
+                    <a href="">预留位置</a>
+                    <a href="">预留位置</a>
+                    <a href="">预留位置</a>
+                </ul>
+            </div>
+        </div>
+    </header>
+
     <router-view/>
+    
+    <footer>
+        <div class="box">           
+            <span>Copyright © 2021 </span><a href="https://github.com/BH02">BH02</a>
+        </div>
+    </footer>
   </div>
 </template>
 
 <style>
+*{
+    padding: 0;
+    margin: 0;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -17,16 +41,70 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-}
+header{
+    width: 100%;
+    height: 80px;
+    margin-bottom: 70px;
+    box-shadow: 0px 0px 20px -10px black;
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+header>.box{
+    height: 80px;
+}
+main{
+    width: 90%;
+    margin: 0 auto;
+}
+footer{
+    width: 100%;
+    height: 150px;
+    background-color: rgb(35,35,35);
+    border-top: 2px solid rgb(187,187,187);
+}
+.box{
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+}
+footer>.box{
+    text-align: center;
+    line-height: 150px;
+    color: gray;
+}
+footer>.box>a{
+    text-decoration: none;
+    color: gray;
+}
+.navBar{
+    float: right;
+    margin-right: 7%;
+}
+.navBar>ul>a{
+    width: auto;
+    height: 80px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    line-height: 80px;
+    margin: 0 10px;
+    color: rgb(136,136,136);
+    box-sizing: border-box;
+}
+.navBar>ul>a:hover{
+    border-bottom: 3px solid rgb(136,136,136);
+}
+.icon{
+    width: 20%;
+    height: 80px;
+    line-height: 80px;
+    float: left;
+    display: flex;
+    justify-content: center;
+}
+.icon>span{
+    font-size: 25px;
+}
+.icon>img{
+    margin: 10px 20px;
 }
 </style>
