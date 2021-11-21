@@ -1,7 +1,9 @@
 <template>
   <div class="conBox br">
-    <div class="red br"></div>
-    <div class="tittle br">这里是标题</div>
+    <div class="top">
+      <div class="pic br"></div>
+      <div class="tittle br overEcli">这里是标题</div>
+    </div>   
     <div class="words">文章内容</div>
     <div class="btn">详情</div>
   </div>
@@ -17,11 +19,16 @@ export default {
 .br{
   border-radius: 1vw;
 }
+.overEcli{
+  overflow:hidden; /*超出部分隐藏*/
+  white-space:nowrap; /*让文本强制在一行不换行*/
+  text-overflow:ellipsis;/*显示省略号来代表被修剪的文本*/
+}
 .conBox{
   width: 44%;
   height: 500px;
   margin: 20px; 
-  background-color: rgba(255, 255, 255, 10%);
+  background-color: rgba(146,151,179,13%);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(0, 0, 0, 20%);
   transition: .2s linear;
@@ -31,19 +38,28 @@ export default {
     background-color: rgba(0, 0, 0, 20%);
     border: 1px solid rgba(0, 0, 0, 10%);
 }
-.red{
+.top{
+  width: 90%;
+  height: auto;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.pic{
   width: 80px;
   height: 80px;
-  background-color: red;
-  display: inline-block;
   margin-right: 10px;
+  border: 1px solid rgba(255, 255, 255, 50%);
+  min-width: 80px;
 }
 .tittle{
   width: 70%;
   height: 40px;
-  display: inline-block;
   font-size: 2rem;
+  text-align: left;
   color: white;
+  margin-left: 2vw;
 }
 .words{
   width: 90%;
