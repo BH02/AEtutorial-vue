@@ -19,7 +19,7 @@ export default ({
 <style scoped>
 .top{
     width: 100%;
-    height: 7vh;
+    height: 70px;
     border-radius: 1vw;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
