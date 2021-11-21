@@ -47,11 +47,20 @@
 
 <script>
 import { Slide } from 'vue-burger-menu'  // import the CSS transitions you wish to use, in this case we are using `Slide`
+import Vue from 'vue'
 
+Vue.prototype.eventBus = new Vue();
 export default {
+    data(){
+        return{
+        }
+    },
     components: {
         Slide // Register your component
-    }
+    },
+    provide : {
+        thisApp: {}
+    },
 }
 
 </script>
