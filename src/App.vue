@@ -87,7 +87,7 @@ header>.box{
     height: 80px;
 }
 footer{
-    width: 100%;
+    width: 100vw;
     height: 150px;
     background-color: rgb(35,35,35);
     border-top: 2px solid rgb(187,187,187);
@@ -96,7 +96,6 @@ footer{
     width: 90vw;
     height: 100%;
     margin: 0 auto;
-    min-width: 600px;
 }
 footer>.box{
     text-align: center;
