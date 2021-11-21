@@ -1,17 +1,34 @@
 <template>
   <div class="conBox br">
     <div class="top">
-      <div class="pic br"></div>
-      <div class="tittle br overEcli">这里是标题</div>
+      <img class="pic br" :src="this.postArt.pic">
+      <div class="tittle br overEcli">{{this.postArt.title}}</div>
     </div>   
-    <div class="words">文章内容</div>
-    <div class="btn">详情</div>
+    <div class="words">{{this.postArt.content}}</div>
+    <router-link to="/about" class="btn" @click.native="routerTo">详情</router-link>
   </div>
 </template>
 
 <script>
+import bus from '../router/bus'
+
 export default {
   name: 'contentBox',
+  inject:['thisApp'],
+  data () {
+    return{
+
+    }
+  },
+  props :[ 
+    'postArt'
+  ],
+  methods:{
+    routerTo(){
+       bus.$emit('postArticle',this.postArt)
+       this.thisApp=this.postArt
+    }
+  }
 }
 </script>
 
@@ -58,7 +75,7 @@ export default {
   height: 40px;
   font-size: 2rem;
   text-align: left;
-  color: white;
+  color: #faf9fb;
   margin-left: 2vw;
 }
 .words{
@@ -67,7 +84,7 @@ export default {
   margin: 20px auto;
   text-align: left;
   text-indent: 2em;
-  color: white;
+  color: #faf9fbcb;
   border-bottom: 1px solid rgba(255, 255, 255, 50%);
 }
 .btn{
@@ -81,6 +98,7 @@ export default {
   float: right;
   margin-right: 25px;
   transition: .2s linear;
+  text-decoration: none;
 }
 .btn:hover{
   background-color: rgb(95, 95, 255);
