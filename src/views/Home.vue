@@ -9,6 +9,10 @@
         <showPic v-for="(src,index) in picList" :key="index+src" :postSrc='src'></showPic>
       </div>
     </div>
+    <div class="visiblePic">
+      <img src="../assets/aeui2.jpg" alt="">
+      <img src="../assets/aeui1.jpg" alt="">
+    </div>
   </div>
 </template>
 
@@ -93,5 +97,8 @@ export default {
 }
 ::-webkit-scrollbar{
   display: none !important;
+}
+.visiblePic{
+  display: none;
 }
 </style>
