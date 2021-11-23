@@ -20,12 +20,11 @@ export default ({
 <style scoped>
 .userInfo{
     width: 20%;
-    height: 80%;
+    height: auto;
     border-radius: 1vw;
     display: flex;
     align-items: center;
     position: relative;
-    margin-left: 35vw;
     transition: .1s linear;
 }
 svg{
@@ -41,7 +40,7 @@ span{
     color: white;
     border-radius: 50%;
     position: absolute;
-    top: 5px;
+    top: 2px;
     left: 25px;
     display: flex;
     align-items: center;
@@ -58,11 +57,6 @@ img{
 @media screen and (max-width:600px) {
     .userInfo{
         display: none;
-    }
-}
-@media screen and (max-width:790px) {
-    .userInfo{
-        margin-left: 25vw;
     }
 }
 </style>
