@@ -7,10 +7,10 @@
                 <!-- <span>After effcts</span> -->
             </div>
             <Slide right>
-                <router-link to="/">
+                <router-link to="/home">
                     <span>首页</span>
                 </router-link>
-                <router-link to="/about">
+                <router-link to="/selectArticle">
                     <span>About</span>
                 </router-link>
                 <router-link to="/">
@@ -25,8 +25,8 @@
             </Slide>
             <div class="navBar">
                 <ul>
-                    <router-link to="/">首页</router-link>
-                    <router-link to="/about">About</router-link>
+                    <router-link to="/home">首页</router-link>
+                    <router-link to="/selectArticle">教程</router-link>
                     <router-link to="/">预留位置</router-link>
                     <router-link to="/">预留位置</router-link>
                     <router-link to="/">预留位置</router-link>
@@ -58,9 +58,6 @@ export default {
     components: {
         Slide // Register your component
     },
-    provide : {
-        thisApp: {}
-    },
 }
 
 </script>
@@ -86,7 +83,7 @@ header{
     box-shadow: 0px 0px 20px -10px black;
     position: fixed;
     z-index: 999;
-    background-color: white;
+    background-color: rgb(21,36,60);
 }
 header>.box{
     height: 80px;
@@ -127,11 +124,14 @@ footer>.box>a{
     text-decoration: none;
     line-height: 80px;
     margin: 0 10px;
-    color: rgb(136,136,136);
+    color: rgb(91,97,120);
     box-sizing: border-box;
 }
 .navBar>ul>a:hover{
-    border-bottom: 3px solid rgb(136,136,136);
+    border-bottom: 3px solid rgb(91,97,120);
+}
+.router-link-exact-active{
+    border-bottom: 3px solid rgb(91,97,120);
 }
 .icon{
     width: 20%;
