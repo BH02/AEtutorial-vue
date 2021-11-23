@@ -48,6 +48,9 @@ export default ({
 img{
     width: 95%;
 }
+img:hover{
+    cursor:pointer
+}
 .content{
     width: 95%;
     text-align: right;
