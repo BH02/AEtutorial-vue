@@ -1,26 +1,24 @@
 <template>
     <div class="box">
-        <div class="title">{{this.art.title}}</div>
-        <div class="words">{{this.art.content}}</div>
+        <div class="title">{{art.title}}</div>
+        <div class="words">{{art.content}}</div>
     </div>    
 </template>
 
 <script>
-import bus from '../router/bus'
 
 export default {
     name:'articleBox',
-    inject: ['thisApp'],
     data(){
         return{
             art:{},
         }
-    },    
+    },
+    created(){
+        this.$store.commit('showBackBtn',true)
+    },
     mounted(){
-        console.log(this.thisApp);
-        bus.$on('postArticle',(res)=>{
-            this.art=res
-        })
+        this.art=this.$store.state.article[this.$route.query.articleId]
     },
 }
 </script>
