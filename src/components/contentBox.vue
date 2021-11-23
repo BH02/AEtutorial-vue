@@ -1,20 +1,18 @@
 <template>
   <div class="conBox br">
     <div class="top">
-      <img class="pic br" :src="this.postArt.pic">
-      <div class="tittle br overEcli">{{this.postArt.title}}</div>
+      <img class="pic br" :src="postArt.pic">
+      <div class="tittle br overEcli">{{postArt.title}}</div>
     </div>   
-    <div class="words">{{this.postArt.content}}</div>
-    <router-link to="/about" class="btn" @click.native="routerTo">详情</router-link>
+    <div class="words">{{postArt.content}}</div>
+    <router-link class="btn" :to="{path:'/showArticle',query:{articleId:postArt.id}}">详情</router-link>
   </div>
 </template>
 
 <script>
-import bus from '../router/bus'
 
 export default {
   name: 'contentBox',
-  inject:['thisApp'],
   data () {
     return{
 
@@ -24,10 +22,9 @@ export default {
     'postArt'
   ],
   methods:{
-    routerTo(){
-       bus.$emit('postArticle',this.postArt)
-       this.thisApp=this.postArt
-    }
+
+  },
+  mounted(){
   }
 }
 </script>
