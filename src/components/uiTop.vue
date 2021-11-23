@@ -1,17 +1,23 @@
 <template>
     <div class="top">
-        <searchBar></searchBar>
-        <userInfo></userInfo>
+        <backBtn v-if="$store.state.backBtnVisible"></backBtn>
+        <searchBar v-if="!$store.state.backBtnVisible"></searchBar>
+        <userInfo class="info"></userInfo>
     </div>
 </template>
 <script>
+import backBtn from '../components/backBtn.vue'
 import searchBar from '../components/searchBar.vue'
 import userInfo from '../components/userInfo.vue'
 export default ({
     name:'uiTop',
     components:{
         searchBar,
-        userInfo
+        userInfo,
+        backBtn
+    },
+    created(){
+        this.$store.commit('showBackBtn',false)
     }
 })
 </script>
@@ -27,5 +33,14 @@ export default ({
     display: flex;
     justify-content: start;
     align-items: center;
+}
+.info{
+    position: absolute;
+    right: 0;
+}
+@media screen and (max-width:1150px) {
+    .info{
+        right: 100px;
+    }
 }
 </style>
