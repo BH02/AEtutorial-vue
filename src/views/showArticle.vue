@@ -4,6 +4,9 @@
       <uiTop></uiTop>
       <div class="content br">
         <articleBox></articleBox>
+        <div class="pic">
+          <img :src="art.pic" class="pic">
+        </div>
       </div>
     </div>
   </div>
@@ -17,8 +20,16 @@ export default {
   name:'About',
   components:{
     uiTop,
-    articleBox
-  }
+    articleBox,
+  },
+  data(){
+    return{
+      art:{},
+    }
+  },
+  mounted(){
+    this.art=this.$store.state.article[this.$route.query.articleId]
+  },
 }
 </script>
 
@@ -50,8 +61,17 @@ export default {
   overflow: scroll;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
   align-content: flex-start;
+}
+.pic{
+  width: 90%;
+  border-radius: 2vw;
+  margin: 20px auto;
+  text-align: left;
+}
+.pic>img{
+  width: 60%;
 }
 ::-webkit-scrollbar{
   display: none !important;
