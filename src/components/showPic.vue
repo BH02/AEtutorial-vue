@@ -8,7 +8,6 @@
 </template>
 
 <script>
-// import bus from '../router/bus'
 export default ({
     name:'showPic',
     data () {
@@ -21,9 +20,6 @@ export default ({
     ],
     mounted(){
         this.images = [this.postSrc.src]
-        // bus.$on('picList',()=>{
-
-        // })
     }
 })
 </script>
