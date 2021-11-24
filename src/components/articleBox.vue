@@ -31,6 +31,10 @@ export default {
     text-align: left;
     text-indent: 2em;
     color: #faf9fbcb;
+    border-radius: 1vw;
+    background-color: rgba(146,151,179,13%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 20%);
 }
 .title{
   width: 70%;
