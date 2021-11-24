@@ -21,7 +21,7 @@ export default new Vuex.Store({
                 id:0,
                 title:'这里是标题一',
                 pic:'/img/Db1.a1fd25e5.png',
-                content:'这是第一篇文章的内容',
+                content:`这是第一篇文章的内容`,
                 router:''
             },
             {
