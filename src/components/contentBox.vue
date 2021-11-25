@@ -4,7 +4,7 @@
       <img class="pic br" :src="postArt.pic">
       <div class="tittle br overEcli">{{postArt.title}}</div>
     </div>   
-    <div class="words">{{postArt.content}}</div>
+    <div class="words overEcli">{{postArt.content}}</div>
     <router-link class="btn" :to="{path:'/showArticle',query:{articleId:postArt.id}}">详情</router-link>
   </div>
 </template>
