@@ -19,23 +19,176 @@ export default new Vuex.Store({
         article:[
             {
                 id:0,
-                title:'这里是标题一',
+                title:'帧',
                 pic:'/img/Db1.a1fd25e5.png',
-                content:`这是第一篇文章的内容`,
+                content:`帧就是影像动画中最小单位的单幅影像画面，相当于电影胶片上的每一格镜头。一帧就是一幅静止的画面，连续的帧就形成动画，如电视图像等。`,
                 router:''
             },
             {
                 id:1,
-                title:'这里是标题二',
+                title:'关键帧',
                 pic:'/img/aeui2.3ffb4059.jpg',
-                content:'这是第二篇文章的内容',
+                content:'关键帧相当于二维动画中的原画。指角色或者物体运动或变化中的关键动作所处的那一帧。关键帧与关键帧之间的动画可以由软件来创建，叫做过渡帧或者中间帧。在AE里面，我们只需要添加关键帧．电脑会自动生成过渡动画。',
                 router:''
             },
             {
                 id:2,
-                title:'这里是标题三',
+                title:'FPS（）',
                 pic:'/img/jill.f02319f1.png',
-                content:'这是第三篇文章的内容',
+                content:'FPS是图像领域中的定义，是指画面每秒传输帧敌，通俗来讲就是指动画或视频的画面致。FPS是测量用于保存、显示动态视频的信息数量。每秒钟帧政愈多，所显示的动作就会愈流畅。通常．要避免动作不流畅的最低是30。某些计算机视频格式．每秒只能提供15帧。',
+                router:''
+            },
+            {
+                id:3,
+                title:'视频格式',
+                pic:'/img/Db1.a1fd25e5.png',
+                content:`
+                MP4
+                MP4是一套用于音频、视频信息的压缩编码标准，由国际标准化组织(ISO）和国际电工委员会(IEC）下属的“动态图像专家组”(Moving Picture Experts Group，即MPEG〉制定，第一版在1998年10月通过，第二版在1999年12月通过。MPEG-4格式的主要用途在于网上流、光盘、语音发送（视频电话)，以及电视广播，
+                AVI
+                AVI，音频视频交错(Audio Video Interleaved)的英文缩写。AVI这个由微软公司发表的视频格式，在视频领域可以说是最悠久的格式之一。AVI格式调用方便、图像质量好，压缩标准可任意选择，是应用最广泛、也是应用时间最长的格式之一。
+                MOV
+                使用过Me机的朋友应该多少按触过QuickTime。QuickTime原本是Apple公司用于Mac计算机上的一种图像视频处理软件。Quick-Time提供了两种标准图像和数字视频格式，即可以支持静态的*.PIC和 .JPG图像格式，动态的基于Indeo压缩法的*.MOV和基于MPEG压缩法的* .MPG视频格式。
+                WMV
+                一种独立于编码方式的在Internet上实时传播多媒体的技术标准，Microsoft公司希望用其取代OuickTime之类的技术标准以及WAV、AVI之类的文件扩展名。WMV的主要优点在于:可扩充的媒体类型、本地或网络回放、可伸缩的媒体类型、流的优先级化、多语言支持、扩展性等。
+                MKV
+                种后缀为MKV的视频文件频频出现在网络上，它可在一个文件中集成多条不同类型的音轨和字幕轨，而且其视频编码的自由度也非常大，可以是常见的DivX、XviD、3IVX.甚至可以是RealVideo 、Quick Time、WMV这类流式视频。
+                FLV
+                FLV是FLASH VIDEO的简称，FLV流媒体格式是一种新的视频格式。由于它形成的文件极小、加载速度极快，使得网络观看视频文件成为可能，它的出现有效地解决了视频文件导入Flash后，使导出的SWF文件体积庞大，不能在网络上很好的使用等缺点。
+                `,
+                router:''
+            },
+            {
+                id:4,
+                title:'常见格式',
+                pic:'/img/Db1.a1fd25e5.png',
+                content:'',
+                router:''
+            },
+            {
+                id:5,
+                title:'比特率',
+                pic:'/img/Db1.a1fd25e5.png',
+                content:`比特率是指每秒传送的比特(bit)数。单位为bp(Bit Per Second)，比特率越高，传送数据速度越快。声音中的比特率是指将模拟声音信号转换成数字声音信号后，单位时间内的二进制数据量，是间接衡量音频质量的一个指标。视频中的比特率（码率）原理与声音中的相同，都是指由模拟信号转换为数字信号后，单位时间内的二进制数据量。`,
+                router:''
+            },
+            {
+                id:6,
+                title:'格式转换',
+                pic:'/img/Db1.a1fd25e5.png',
+                content:'视频格式转换主指通过一些软件，将视频的格式互相转化，使其达到用户的需求。常用的视频格式有影像格式（Video)、流媒体格式(Stream Video)。每一种格式的文件需要有对应的播放器。MOV格式文件用OuickTime据放，RM格式的文件用RealPlayer播放。若出现只装有RealPlayer播放器，所有的却是一个MOV格式文件，为了播放．需要对视频进行格式转换。',
+                router:''
+            },
+            {
+                id:7,
+                title:'窗口功能',
+                pic:'/img/Db1.a1fd25e5.png',
+                content:'',
+                router:''
+            },
+            {
+                id:8,
+                title:'菜单栏',
+                pic:'/img/Db1.a1fd25e5.png',
+                content:'',
+                router:''
+            },
+            {
+                id:9,
+                title:'工具栏',
+                pic:'/img/Db1.a1fd25e5.png',
+                content:'',
+                router:''
+            },
+            {
+                id:10,
+                title:'项目面板和参数',
+                pic:'/img/Db1.a1fd25e5.png',
+                content:'分辨率、帧速率',
+                router:''
+            },
+            {
+                id:11,
+                title:'图层及图层面板',
+                pic:'/img/Db1.a1fd25e5.png',
+                content:'',
+                router:''
+            },
+            {
+                id:12,
+                title:'项目面板',
+                pic:'/img/Db1.a1fd25e5.png',
+                content:'',
+                router:''
+            },
+            {
+                id:13,
+                title:'合成面板',
+                pic:'/img/Db1.a1fd25e5.png',
+                content:'',
+                router:''
+            },
+            {
+                id:14,
+                title:'关键帧属性',
+                pic:'/img/Db1.a1fd25e5.png',
+                content:'',
+                router:''
+            },
+            {
+                id:15,
+                title:'动画案例',
+                pic:'/img/Db1.a1fd25e5.png',
+                content:'',
+                router:''
+            },
+            {
+                id:16,
+                title:'文字工具',
+                pic:'/img/Db1.a1fd25e5.png',
+                content:'',
+                router:''
+            },
+            {
+                id:17,
+                title:'效果控件',
+                pic:'/img/Db1.a1fd25e5.png',
+                content:'',
+                router:''
+            },
+            {
+                id:18,
+                title:'蒙板遮罩',
+                pic:'/img/Db1.a1fd25e5.png',
+                content:'',
+                router:''
+            },
+            {
+                id:19,
+                title:'元素间的父子关系',
+                pic:'/img/Db1.a1fd25e5.png',
+                content:'',
+                router:''
+            },
+            {
+                id:20,
+                title:'简单表达式',
+                pic:'/img/Db1.a1fd25e5.png',
+                content:'',
+                router:''
+            },
+            {
+                id:21,
+                title:'渲染设置以及常用格式',
+                pic:'/img/Db1.a1fd25e5.png',
+                content:'',
+                router:''
+            },
+            {
+                id:22,
+                title:'KeyLight一键扣绿',
+                pic:'/img/Db1.a1fd25e5.png',
+                content:'',
                 router:''
             }
         ]
