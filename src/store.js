@@ -33,7 +33,7 @@ export default new Vuex.Store({
             },
             {
                 id:2,
-                title:'FPS（）',
+                title:'FPS（Frames Per Second）',
                 pic:'/img/jill.f02319f1.png',
                 content:'FPS是图像领域中的定义，是指画面每秒传输帧敌，通俗来讲就是指动画或视频的画面致。FPS是测量用于保存、显示动态视频的信息数量。每秒钟帧政愈多，所显示的动作就会愈流畅。通常．要避免动作不流畅的最低是30。某些计算机视频格式．每秒只能提供15帧。',
                 router:''
