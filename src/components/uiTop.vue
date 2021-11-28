@@ -5,6 +5,7 @@
         <userInfo class="info"></userInfo>
     </div>
 </template>
+
 <script>
 import backBtn from '../components/backBtn.vue'
 import searchBar from '../components/searchBar.vue'
