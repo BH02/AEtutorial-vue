@@ -45,7 +45,7 @@ export default {
     width: 100vw;
     margin: 0 auto;
     padding: 40px 0;
-    background-image: url('../assets/aeui1+2.png');  
+    background-image: url('../assets/bg2.png');  
     background-repeat: repeat;
     background-size: 120%;
     background-position-x: -10vw;
