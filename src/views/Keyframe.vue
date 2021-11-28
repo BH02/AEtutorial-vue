@@ -2,11 +2,15 @@
   <div class="home">
     <div class="transparent br">
       <uiTop></uiTop>
-      <uiSec msg='了解视频'></uiSec>
+      <uiSec msg='操作关键帧'></uiSec>
       <div class="content br">
         <contentBox v-for="(getId,i) in artId" :key="i+996" :postId='getId'></contentBox>
         <showPic v-for="(getId,index) in picId" :key="index" :postId='getId'></showPic>
       </div>
+    </div>
+    <div class="visiblePic">
+      <img src="../assets/aeui2.jpg" alt="">
+      <img src="../assets/aeui1.jpg" alt="">
     </div>
   </div>
 </template>
@@ -18,7 +22,7 @@ import showPic from '../components/showPic.vue'
 import uiSec from '../components/uiSec.vue'
 
 export default {
-  name: 'selectArticle',
+  name: 'Keyframe',
   components:{
     contentBox,
     uiTop,
@@ -27,7 +31,7 @@ export default {
   },
   data(){
     return{
-      artId:[0,1,2],
+      artId:[14,15],
       picId:[0,1]
     }
   }
@@ -67,5 +71,8 @@ export default {
 }
 ::-webkit-scrollbar{
   display: none !important;
+}
+.visiblePic{
+  display: none;
 }
 </style>

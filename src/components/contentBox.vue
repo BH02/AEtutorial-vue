@@ -1,10 +1,10 @@
 <template>
   <div class="conBox br">
     <div class="top">
-      <img class="pic br" :src="getArt.pic">
+      <img class="pic br" :src="getArt.pic[0]">
       <div class="tittle br overEcli">{{getArt.title}}</div>
     </div>   
-    <div class="words overEcli">{{getArt.content}}</div>
+    <div class="words" v-html="getArt.newContent"></div>
     <router-link class="btn" :to="{path:'/showArticle',query:{articleId:getArt.id}}">详情</router-link>
   </div>
 </template>
@@ -26,6 +26,7 @@ export default {
   },
   mounted(){
     this.getArt=this.$store.state.article[this.postId]
+    this.getArt.newContent=this.getArt.content.replace(/\n/g, '<br>')
   }
 }
 </script>
@@ -84,6 +85,9 @@ export default {
   text-indent: 2em;
   color: #faf9fbcb;
   border-bottom: 1px solid rgba(255, 255, 255, 50%);
+
+  overflow:hidden; /*超出部分隐藏*/
+  text-overflow:ellipsis;/*显示省略号来代表被修剪的文本*/
 }
 .btn{
   width: 80px;

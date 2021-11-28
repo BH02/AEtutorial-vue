@@ -1,7 +1,7 @@
 <template>
     <div class="box">
         <div class="title">{{art.title}}</div>
-        <div class="words">{{art.content}}</div>
+        <div class="words" v-html="art.newContent"></div>
     </div>    
 </template>
 
@@ -19,6 +19,7 @@ export default {
     },
     mounted(){
         this.art=this.$store.state.article[this.$route.query.articleId]
+        this.art.newContent=this.art.content.replace(/\n/g, '<br>')
     },
 }
 </script>
@@ -35,6 +36,8 @@ export default {
     background-color: rgba(146,151,179,13%);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(0, 0, 0, 20%);
+    padding: 1vw;
+    line-height: 4vh;
 }
 .title{
   width: 70%;

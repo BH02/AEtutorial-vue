@@ -11,25 +11,41 @@
                     <span>首页</span>
                 </router-link>
                 <router-link to="/selectArticle">
-                    <span>About</span>
+                    <span>AE起步</span>
                 </router-link>
-                <router-link to="/">
-                    <span>预留位置</span>
+                <router-link to="/videoKnows">
+                    <span>认识视频</span>
                 </router-link>
-                <router-link to="/">
-                    <span>预留位置</span>
+                <router-link to="/aeInterface">
+                    <span>AE界面</span>
                 </router-link>
-                <router-link to="/">
-                    <span>预留位置</span>
+                <router-link to="/mainInterface">
+                    <span>主要面板</span>
+                </router-link>
+                <router-link to="/Keyframe">
+                    <span>关键帧</span>
+                </router-link>
+                <router-link to="/effect">
+                    <span>效果</span>
+                </router-link>
+                <router-link to="/Advanced">
+                    <span>进阶</span>
+                </router-link>
+                <router-link to="/Render">
+                    <span>渲染</span>
                 </router-link>
             </Slide>
             <div class="navBar">
                 <ul>
                     <router-link to="/home">首页</router-link>
-                    <router-link to="/selectArticle">教程</router-link>
-                    <router-link to="/">预留位置</router-link>
-                    <router-link to="/">预留位置</router-link>
-                    <router-link to="/">预留位置</router-link>
+                    <router-link to="/selectArticle">AE起步</router-link>
+                    <router-link to="/videoKnows">认识视频</router-link>
+                    <router-link to="/aeInterface">AE界面</router-link>
+                    <router-link to="/mainInterface">主要面板</router-link>
+                    <router-link to="/Keyframe">关键帧</router-link>
+                    <router-link to="/effect">效果</router-link>
+                    <router-link to="/Advanced">进阶</router-link>
+                    <router-link to="/Render">渲染</router-link>
                 </ul>
             </div>
         </div>
@@ -42,6 +58,23 @@
             <span>Copyright © 2021 </span><a href="https://github.com/BH02">BH02</a>
         </div>
     </footer>
+    <div class="visiblePic">
+      <img src="./assets/aeui2.jpg" alt="">
+      <img src="./assets/aeui1.jpg" alt="">
+      <img src="./assets/aeui3.png" alt="">
+      <img src="./assets/frame.png" alt="">
+      <img src="./assets/frame2.png" alt="">
+      <img src="./assets/keyframe.png" alt="">
+      <img src="./assets/fps.png" alt="">
+      <img src="./assets/format.png" alt="">
+      <img src="./assets/Bitrate.png" alt="">
+      <img src="./assets/FF150.png" alt="">
+      <img src="./assets/aeWindow.png" alt="">
+      <img src="./assets/aenav.png" alt="">
+      <img src="./assets/projectPanel.png" alt="">
+      <img src="./assets/layersPanel.png" alt="">
+      <img src="./assets/layerBasic.png" alt="">
+    </div>
   </div>
 </template>
 
@@ -75,7 +108,9 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-
+.visiblePic{
+  display: none;
+}
 header{
     width: 100vw;
     height: 80px;

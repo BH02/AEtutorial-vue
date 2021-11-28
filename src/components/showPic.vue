@@ -1,8 +1,8 @@
 <template>
     <div class="box br">
         <div class="images" v-viewer>
-            <!-- <img v-for="src in images.src" :key="src" :src="src" class="br"> -->
-            <img :src="images.src" class="br">
+            <img v-for="src in images.src" :key="src" :src="src" class="br">
+            <!-- <img :src="images.src" class="br"> -->
         </div>
         <div class="content">{{images.content}}</div>
     </div>
@@ -21,7 +21,6 @@ export default ({
     ],
     mounted(){
         this.images = this.$store.state.picList[this.postId]
-        console.log(this.images);
     }
 })
 </script>

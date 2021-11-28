@@ -4,9 +4,15 @@
       <uiTop></uiTop>
       <div class="content br">
         <articleBox></articleBox>
-        <div class="pic">
-          <img :src="art.pic" class="pic">
+
+        <!-- <div class="pic">
+          <img :src="art.pic">
+        </div> -->
+
+        <div class="pic" v-viewer>
+            <img v-for="src in art.pic" :key="src" :src="src" class="br">
         </div>
+        
       </div>
     </div>
   </div>
@@ -69,9 +75,11 @@ export default {
   border-radius: 2vw;
   margin: 20px auto;
   text-align: left;
+  overflow: hidden;
 }
 .pic>img{
-  width: 60%;
+  width: auto;
+  border-radius: 2vw;
 }
 ::-webkit-scrollbar{
   display: none !important;
