@@ -8,10 +8,12 @@ export default new Vuex.Store({
         backBtnVisible:false,
         picList:[
             {
+                id:0,
                 src:'/img/aeui2.3ffb4059.jpg',
                 content:'这是第一张图片'
             },
             {
+                id:1,
                 src:'/img/Db1.a1fd25e5.png',
                 content:'这是第二张图片'
             }
