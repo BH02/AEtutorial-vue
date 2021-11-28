@@ -20,6 +20,20 @@ export default new Vuex.Store({
                     './img/Db1.a1fd25e5.png',
                 ],
                 content:'AE图标'
+            },
+            {
+                id:2,
+                src:[
+                    './img/trigger.48572e21.gif',
+                ],
+                content:'关键帧动画展示——动画标题划过'
+            },
+            {
+                id:3,
+                src:[
+                    './img/ringRotation.dea76612.gif',
+                ],
+                content:'关键帧动画展示——圆环动画'
             }
         ],
         article:[
@@ -196,8 +210,8 @@ export default new Vuex.Store({
                 id:15,
                 title:'动画案例',
                 pic:[
-                    './img/Db1.a1fd25e5.png',
-                    './img/frame2.5c672f2a.png'
+                    './img/trigger.48572e21.gif',
+                    './img/ringRotation.dea76612.gif'
                 ],
                 content:'',
                 router:''

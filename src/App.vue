@@ -74,6 +74,8 @@
       <img src="./assets/projectPanel.png" alt="">
       <img src="./assets/layersPanel.png" alt="">
       <img src="./assets/layerBasic.png" alt="">
+      <img src="./assets/trigger.gif" alt="">
+      <img src="./assets/ringRotation.gif" alt="">
     </div>
   </div>
 </template>
