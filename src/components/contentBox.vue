@@ -1,11 +1,11 @@
 <template>
   <div class="conBox br">
     <div class="top">
-      <img class="pic br" :src="postArt.pic">
-      <div class="tittle br overEcli">{{postArt.title}}</div>
+      <img class="pic br" :src="getArt.pic">
+      <div class="tittle br overEcli">{{getArt.title}}</div>
     </div>   
-    <div class="words overEcli">{{postArt.content}}</div>
-    <router-link class="btn" :to="{path:'/showArticle',query:{articleId:postArt.id}}">详情</router-link>
+    <div class="words overEcli">{{getArt.content}}</div>
+    <router-link class="btn" :to="{path:'/showArticle',query:{articleId:getArt.id}}">详情</router-link>
   </div>
 </template>
 
@@ -15,16 +15,17 @@ export default {
   name: 'contentBox',
   data () {
     return{
-
+      getArt:{}
     }
   },
   props :[ 
-    'postArt'
+    'postId'
   ],
   methods:{
 
   },
   mounted(){
+    this.getArt=this.$store.state.article[this.postId]
   }
 }
 </script>
