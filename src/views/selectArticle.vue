@@ -2,11 +2,10 @@
   <div class="home">
     <div class="transparent br">
       <uiTop></uiTop>
+      <uiSec msg='这里是页面主题'></uiSec>
       <div class="content br">
-        <contentBox v-for="(art,i) in $store.state.article" :key="i" :postArt='art'>
-          {{art.title}}
-        </contentBox>
-        <showPic v-for="(src,index) in $store.state.picList" :key="index+src" :postSrc='src'></showPic>
+        <contentBox v-for="(getId,i) in artId" :key="i" :postId='getId'></contentBox>
+        <showPic v-for="(getId,index) in picId" :key="index+getId" :postId='getId'></showPic>
       </div>
     </div>
     <div class="visiblePic">
@@ -20,17 +19,20 @@
 import contentBox from '../components/contentBox.vue'
 import uiTop from '../components/uiTop.vue'
 import showPic from '../components/showPic.vue'
+import uiSec from '../components/uiSec.vue'
 
 export default {
   name: 'selectArticle',
   components:{
     contentBox,
     uiTop,
-    showPic
+    showPic,
+    uiSec
   },
   data(){
     return{
-
+      artId:[0,1,2,3,4],
+      picId:[0,1]
     }
   }
 }
@@ -42,7 +44,8 @@ export default {
 .home{
   width: 100%;
   padding: 2vh 0;
-  background-image: url('../assets/aeui1+2.png');
+  background-image: url('../assets/aeui1+2.png');  
+  background-repeat: repeat;
   background-size: 120%;
   background-position-x: -10vw;
   background-position-y: -10vh;
