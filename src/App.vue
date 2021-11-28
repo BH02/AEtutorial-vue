@@ -58,6 +58,7 @@
             <span>Copyright © 2021 </span><a href="https://github.com/BH02">BH02</a>
         </div>
     </footer>
+    <!-- 非常笨比的图片加载 -->
     <div class="visiblePic">
       <img src="./assets/aeui2.jpg" alt="">
       <img src="./assets/aeui1.jpg" alt="">
@@ -76,6 +77,19 @@
       <img src="./assets/layerBasic.png" alt="">
       <img src="./assets/trigger.gif" alt="">
       <img src="./assets/ringRotation.gif" alt="">
+      <img src="./assets/textTool.png" alt="">
+      <img src="./assets/textTool2.png" alt="">
+      <img src="./assets/effect1.png" alt="">
+      <img src="./assets/mask1.png" alt="">
+      <img src="./assets/mask3.png" alt="">
+      <img src="./assets/mask2.png" alt="">
+      <img src="./assets/fs.png" alt="">
+      <img src="./assets/fs.gif" alt="">
+      <img src="./assets/expression1.png" alt="">
+      <img src="./assets/wiggle1.png" alt="">
+      <img src="./assets/keylight1.png" alt="">
+      <img src="./assets/output.png" alt="">
+      <img src="./assets/output2.png" alt="">
     </div>
   </div>
 </template>
@@ -91,7 +105,7 @@ export default {
         }
     },
     components: {
-        Slide // Register your component
+        Slide
     },
 }
 
@@ -192,7 +206,7 @@ footer>.box>a{
 .bm-item-list>a>span{
     min-width: 100px !important;
 }
-@media screen and (max-width:600px) {
+@media screen and (max-width:900px) {
     .navBar{
         display: none;
     }

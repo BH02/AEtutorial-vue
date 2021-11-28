@@ -34,6 +34,42 @@ export default new Vuex.Store({
                     './img/ringRotation.dea76612.gif',
                 ],
                 content:'关键帧动画展示——圆环动画'
+            },
+            {
+                id:4,
+                src:[
+                    './img/fs.c0d83a82.gif',
+                ],
+                content:'父子层级演示动画'
+            },
+            {
+                id:5,
+                src:['./img/output.3a7ce429.png','./img/output2.519f6f66.png'],
+                content:'渲染设置'
+            },
+            {
+                id:6,
+                src:['./img/keylight1.eccac615.png'],
+                content:'Keylight界面'
+            },
+            {
+                id:7,
+                src:['./img/aenav.d4efd8c0.png'],
+                content:'工具栏展示'
+            },
+            {
+                id:8,
+                src:['./img/layerBasic.ff6195b5.png'],
+                content:'图层基本属性'
+            },
+            {
+                id:9,
+                src:[
+                    './img/mask1.f05eb60f.png',
+                    './img/mask2.c19452f2.png',
+                    './img/mask3.5dfa62f5.png'
+                ],
+                content:'蒙板效果'
             }
         ],
         article:[
@@ -194,9 +230,12 @@ export default new Vuex.Store({
             },
             {
                 id:13,
-                title:'合成面板',
+                title:'获取AE',
                 pic:['./img/Db1.a1fd25e5.png'],
-                content:'无',
+                content:`
+                百度搜索Adobe，进入Adobe官网付费获取正版AE（推荐）。
+                微博关注@vposy，在置顶微博查看下载链接（不推荐）。
+                `,
                 router:''
             },
             {
@@ -219,50 +258,77 @@ export default new Vuex.Store({
             {
                 id:16,
                 title:'文字工具',
-                pic:['./img/Db1.a1fd25e5.png'],
-                content:'',
+                pic:[
+                    './img/textTool.611b76cc.png',
+                    './img/textTool2.e3b40c71.png'
+                ],
+                content:'新建一个文本图层，拥有图层基本属性，与其他软件的文字编辑相同，在此之上还能对文本进行关键帧设置实现显示文字动画。',
                 router:''
             },
             {
                 id:17,
                 title:'效果控件',
-                pic:['./img/Db1.a1fd25e5.png'],
-                content:'',
+                pic:['./img/effect1.5106e506.png'],
+                content:'选中一个图层在效果控件窗口右键即可弹出效果菜单，或者直接在"效果与预设"窗口寻找想要的预设。效果控件里有大量AE自带的基础效果。',
                 router:''
             },
             {
                 id:18,
                 title:'蒙板遮罩',
-                pic:['./img/Db1.a1fd25e5.png'],
-                content:'',
+                pic:[
+                    './img/mask1.f05eb60f.png',
+                    './img/mask2.c19452f2.png',
+                    './img/mask3.5dfa62f5.png'
+                ],
+                content:`遮罩（mask），是一个路径或者轮廓图，用于修改层的Alpha通道。
+                简而言之，这个遮罩层可以允许你阻止某幅图片不透过该层、其下一层或背景显示出来，也就是我们传统中遮掩图片的某部分的一种方式。也就是说，遮罩是由至少2个对象组合起来的，一个是被改变的对象，另一个是作为遮罩的对象。`,
                 router:''
             },
             {
                 id:19,
-                title:'元素间的父子关系',
-                pic:['./img/Db1.a1fd25e5.png'],
-                content:'',
+                title:'元素间的父子关系。',
+                pic:[
+                    './img/fs.cb95862b.png',
+                    './img/fs.c0d83a82.gif'
+                ],
+                content:'子层级的一些基础属性会随父层级变化，而且在改变子层级的基础属性时父层级不会发生变化。',
                 router:''
             },
             {
                 id:20,
                 title:'简单表达式',
-                pic:['./img/Db1.a1fd25e5.png'],
-                content:'',
+                pic:[
+                    './img/wiggle1.4594e0fe.png',
+                    './img/expression1.cb31e9d8.png'
+                ],
+                content:`按住Alt点击图层基本属性旁边的秒表即可打开表达式界面。通过表达式设置的数值有最高优先级。
+                \n 抖动表达式 wiggle(每秒钟抖动次数,数值范围)
+                wiggle(5，20)则代表每秒钟抖动五次，每次抖动修改的数值范围是20。
+                \n 随机表达式 random(最小值,最大值)
+                按照最小值最大值随机返回一个符合该范围的数值，属性有多个值时需要用数组如[random(10,20),random(0,99),……]。
+                \n 时间表达式 time
+                随时间对数值进行叠加，同随机数值一样，属性有多个值的时候需要用到数组。
+                \n 索引表达式 index
+                返回当前图层所在层级的层数，第一层的图层的index会返回数字1
+                `,
                 router:''
             },
             {
                 id:21,
                 title:'渲染设置以及常用格式',
-                pic:['./img/Db1.a1fd25e5.png'],
-                content:'',
+                pic:['./img/output.3a7ce429.png','./img/output2.519f6f66.png'],
+                content:'基本上渲染输出只会用到AVI和QuickTime两个格式，前者输出质量高体积大，后者支持透明通道的视频。',
                 router:''
             },
             {
                 id:22,
                 title:'KeyLight一键扣绿',
-                pic:['./img/Db1.a1fd25e5.png'],
-                content:'',
+                pic:['./img/keylight1.eccac615.png'],
+                content:`曾是一个非常优秀的外部插件，现在已经被官方集成到正版AE里，新版AE不用下载安装就能直接使用。
+                单击Screen Color旁边的取色吸管选取要抠除的颜色即可大致去掉所选颜色，并且生成透明通道。
+                适当拖动调节Screen Gain的值,使得抠图区域更加纯净。
+                Dispill Bias 顔色溢出抑制,吸管吸取皮肤颜色,则皮肤周围的黑边就会改善,Alpha Bias 透明度偏移同时也会改变。
+                `,
                 router:''
             }
         ]

@@ -32,7 +32,7 @@ export default {
   data(){
     return{
       artId:[16,17,18],
-      picId:[0,1]
+      picId:[9]
     }
   }
 }

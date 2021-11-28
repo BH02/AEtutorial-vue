@@ -31,8 +31,8 @@ export default {
   },
   data(){
     return{
-      artId:[3,4,5,6],
-      picId:[0,1]
+      artId:[3,5,6],
+      picId:[]
     }
   }
 }
