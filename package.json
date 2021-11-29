@@ -9,8 +9,10 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "swiper": "^7.3.1",
     "v-viewer": "^1.6.4",
     "vue": "^2.6.11",
+    "vue-awesome-swiper": "^4.1.1",
     "vue-burger-menu": "^2.0.5",
     "vue-router": "^3.2.0",
     "vuex": "^3.6.2"
