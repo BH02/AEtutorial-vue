@@ -12,7 +12,7 @@
             </div>
             <div class="content">
                 <div class="words">
-                    第二段介绍
+                    After Effects软件可以帮助高效、准确的创建大量引人注目的动态图形和令人印象深刻的视觉效果。通过紧密集成和高灵活度的二维和三维合成，以及数百个预设效果和动画。Adobe为您的电影、视频作品添加了全新的效果。
                 </div>
                 <div class="images" v-viewer>
                     <img src="../assets/aeui4.png" class="br">
@@ -23,7 +23,16 @@
                     <img src="../assets/aeui4.png" class="br">
                 </div>
                 <div class="words">
-                    第三段介绍
+                    After Effects使用数百个插件来增强图像效果和动画控制。它可以与其他Adobe软件和三维软件相结合
+                </div>
+            </div>
+            <div class="content">
+                <div class="words">
+                    本教程试着向从未接触过AE的人介绍AE，有很多不够详细的地方，可以在github上给本项目留言，我一定会加以改进。
+                    <a href="https://github.com/BH02/AEtutorial-vue">项目地址→</a>
+                </div>
+                <div class="images" v-viewer>
+                    <img src="../assets/aeui4.png" class="br">
                 </div>
             </div>
         </div>
@@ -50,6 +59,7 @@ export default {
     background-size: 120%;
     background-position-x: -10vw;
     background-position-y: -10vh;
+    overflow: hidden;
 }
 .main{
     width: 90vw;
@@ -65,7 +75,7 @@ export default {
     min-width: 763px;
     background-color: rgb(21,36,60);
 }
-.content:nth-child(2){
+.content:nth-child(2),.content:nth-child(3){
     margin: 40px auto;
 }
 .words{
@@ -77,9 +87,17 @@ export default {
     text-overflow:ellipsis;/*显示省略号来代表被修剪的文本*/
     min-width: 447px;
     color: rgb(91,97,120);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.words>a{
+    text-decoration: none;
+    color: rgb(91,97,120);
+
 }
 .images{
-    width: 41%;
+    width: 60%;
     height: 100%;
     border-radius: 1vw;
 }

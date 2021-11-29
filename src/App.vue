@@ -7,7 +7,7 @@
                 <!-- <span>After effcts</span> -->
             </div>
             <Slide right>
-                <router-link to="/home">
+                <router-link to="/">
                     <span>首页</span>
                 </router-link>
                 <router-link to="/selectArticle">
@@ -37,7 +37,7 @@
             </Slide>
             <div class="navBar">
                 <ul>
-                    <router-link to="/home">首页</router-link>
+                    <router-link to="/">首页</router-link>
                     <router-link to="/selectArticle">AE起步</router-link>
                     <router-link to="/videoKnows">认识视频</router-link>
                     <router-link to="/aeInterface">AE界面</router-link>
@@ -106,7 +106,7 @@ export default {
     },
     components: {
         Slide
-    },
+    }
 }
 
 </script>

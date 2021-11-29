@@ -6,6 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state:{
         backBtnVisible:false,
+        showMsg:false,
         picList:[
             {
                 id:0,
@@ -336,6 +337,9 @@ export default new Vuex.Store({
     mutations:{
         showBackBtn(state,getBool){
             state.backBtnVisible=getBool
+        },
+        showMsg(state,getBool){
+            state.showMsg=getBool
         }
     },
     actions:{}

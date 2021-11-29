@@ -24,7 +24,7 @@ export default {
   methods:{
 
   },
-  mounted(){
+  created(){
     this.getArt=this.$store.state.article[this.postId]
     this.getArt.newContent=this.getArt.content.replace(/\n/g, '<br>')
   }
