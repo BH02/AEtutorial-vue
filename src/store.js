@@ -7,6 +7,7 @@ export default new Vuex.Store({
     state:{
         backBtnVisible:false,
         showMsg:false,
+        searchId:[],
         picList:[
             {
                 id:0,
@@ -340,6 +341,9 @@ export default new Vuex.Store({
         },
         showMsg(state,getBool){
             state.showMsg=getBool
+        },
+        getSearchId(state,getId){
+            state.searchId=getId
         }
     },
     actions:{}
