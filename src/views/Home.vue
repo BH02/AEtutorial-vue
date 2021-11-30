@@ -75,11 +75,13 @@ export default {
     width: 60vw;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: row;
     margin: 40px auto;
     box-shadow: 5px 5px 10px 5px #0005;
     border-radius: 1vw;
-    min-width: 763px;
     background-color: rgb(21,36,60);
+    overflow: hidden;
 }
 .words{
     width: 40vw;
@@ -88,7 +90,6 @@ export default {
     text-align: left;
     overflow:hidden; /*超出部分隐藏*/
     text-overflow:ellipsis;/*显示省略号来代表被修剪的文本*/
-    min-width: 447px;
     color: rgb(91,97,120);
     display: flex;
     justify-content: center;
@@ -107,5 +108,17 @@ export default {
 .br{
     width: 100%;
     border-radius: 1vw;
+}
+@media screen and (max-width:763px){
+    .content{
+        width: 90vw;
+        flex-direction: column;
+    }
+    .words{
+        width: 90%;
+    }
+    .images{
+        width: 90%;
+    }
 }
 </style>

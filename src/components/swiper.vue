@@ -1,46 +1,55 @@
 <template>
   <swiper ref="mySwiper" :options="swiperOptions">
-    <swiper-slide>
-        <img src="../assets/slide_1.gif" alt="">
-    </swiper-slide>
-    <swiper-slide>
-        <img src="../assets/loop2.png" alt="">
-    </swiper-slide>
-    <swiper-slide>
-        <img src="../assets/loop3.png" alt="">
-    </swiper-slide>
-    <swiper-slide>
-        <img src="../assets/slide_10.gif" alt="">
-    </swiper-slide>
-    <swiper-slide>
-        <img src="../assets/slide_7.gif" alt="">
+    <swiper-slide v-for="pic in picList" :key="pic.id">
+        <img :src="pic.url">
     </swiper-slide>
     <div class="swiper-pagination" slot="pagination"></div>
   </swiper>
 </template>
 <script>
 export default {
-    name: 'carrousel',
-    data() {
-      return {
-        swiperOptions: {
-          pagination: {
-            el: '.swiper-pagination'
-          },
-          // Some Swiper option/callback...
-        }
-      }
-    },
-    computed: {
-      swiper() {
-        return this.$refs.mySwiper.$swiper
-      }
-    },
-    mounted() {
-      console.log('Current Swiper instance object', this.swiper)
-      this.swiper.slideTo(3, 1000, false)
+  name: 'carrousel',
+  data() {
+    return {
+      swiperOptions: {
+        pagination: '.swiper-pagination',
+        loop:true,
+        autoplay:3000,
+      },
+      picList:[
+        {
+          id:'00',
+          url:require('../assets/slide_1.gif')
+        },
+        {
+          id:'01',
+          url:require('../assets/loop2.png')
+        },
+        {
+          id:'02',
+          url:require('../assets/loop3.png')
+        },
+        {
+          id:'03',
+          url:require('../assets/slide_10.gif')
+        },
+        {
+          id:'04',
+          url:require('../assets/slide_7.gif')
+        },
+      ]
     }
+  },
+  computed: {
+    swiper() {
+      return this.$refs.mySwiper.swiper
+    }
+  },
+  mounted() {
+    console.log('Current Swiper instance object', this.swiper)
+    this.swiper.slideTo(3, 1000, false)
   }
+}
 </script>
 <style scoped>
 .swiper-container{

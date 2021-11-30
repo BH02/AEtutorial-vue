@@ -2,7 +2,7 @@
   <div class="conBox br">
     <div class="top">
       <img class="pic br" :src="getArt.pic[0]">
-      <div class="tittle br overEcli">{{getArt.title}}</div>
+      <div class="title br overEcli">{{getArt.title}}</div>
     </div>   
     <div class="words" v-html="getArt.newContent"></div>
     <router-link class="btn" :to="{path:'/showArticle',query:{articleId:getArt.id}}">详情</router-link>
@@ -69,10 +69,10 @@ export default {
   border: 1px solid rgba(255, 255, 255, 50%);
   min-width: 80px;
 }
-.tittle{
+.title{
   width: 70%;
   height: 40px;
-  font-size: 2rem;
+  font-size: 30px;
   text-align: left;
   color: #faf9fb;
   margin-left: 2vw;
