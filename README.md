@@ -1,2 +1,2 @@
-学校比赛参赛作品。
+HTML期末作业。
 vuex、vue-router、vue-burger-menu、v-viewer、swiper
