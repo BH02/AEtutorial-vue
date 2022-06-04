@@ -34,6 +34,9 @@
                 <router-link to="/Render">
                     <span>渲染</span>
                 </router-link>
+                <router-link to="/testPage">
+                    <span>测试页面</span>
+                </router-link>
             </Slide>
             <div class="navBar">
                 <ul>
@@ -46,6 +49,7 @@
                     <router-link to="/effect">效果</router-link>
                     <router-link to="/Advanced">进阶</router-link>
                     <router-link to="/Render">渲染</router-link>
+                    <router-link to="/testPage">测试页面</router-link>
                 </ul>
             </div>
         </div>

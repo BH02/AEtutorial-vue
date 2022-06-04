@@ -59,11 +59,16 @@ const routes = [
     path: '/search',
     name: 'search',
     component: () => import('../views/searchRes.vue')
+  },
+  {
+    path: '/testPage',
+    name: 'testPage',
+    component: () => import('../views/testPage.vue')
   }
 ]
 
 const router = new VueRouter({
-  // mode: 'history',
+  mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
