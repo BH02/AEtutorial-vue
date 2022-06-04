@@ -1,8 +1,7 @@
 module.exports = {
-    publicPath:'./',
-    devServer: {
-        proxy: {
-            '^/api': {
+    serve: {
+        proxyTable: {
+            '/api': {
                 target: 'http://localhost:8081/',  // 目标接口域名
                 ws:true,
                 changeOrigin: true,  // 是否跨域

@@ -2,34 +2,42 @@
   <div class="home">
     <div class="transparent br">
       <uiTop></uiTop>
-      <uiSec msg='视频知识'></uiSec>
+      <uiSec msg='测试页面'></uiSec>
       <div class="content br">
-        <contentBox v-for="(getId,i) in artId" :key="i+996" :postId='getId'></contentBox>
-        <showPic v-for="(getId,index) in picId" :key="index" :postId='getId'></showPic>
+        <!-- <contentBox v-for="(getId,i) in artId" :key="i+996" :postId='getId'></contentBox> -->
+        <!-- <showPic v-for="(getId,index) in picId" :key="index" :postId='getId'></showPic> -->
+
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import contentBox from '../components/contentBox.vue'
+// import contentBox from '../components/contentBox.vue'
 import uiTop from '../components/uiTop.vue'
-import showPic from '../components/showPic.vue'
+// import showPic from '../components/showPic.vue'
 import uiSec from '../components/uiSec.vue'
 
 export default {
   name: 'testPage',
   components:{
-    contentBox,
+    // contentBox,
     uiTop,
-    showPic,
+    // showPic,
     uiSec
   },
   data(){
     return{
-      artId:[3,5,6],
-      picId:[]
+      // artId:[3,5,6],
+      // picId:[]
     }
+  },
+  mounted(){
+    this.$axios.get("/api/test").then(res=>{
+      console.log(res.data)
+    }).catch(err=>{
+      console.log(err)
+    })  
   }
 }
 </script>
