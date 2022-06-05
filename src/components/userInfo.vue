@@ -41,12 +41,31 @@ export default {
             ]
         }
     },
+    created(){
+        if (localStorage.getItem("LoginAcc")==null) {
+                this.$store.localLogin=false
+            }else{
+                this.$store.localLogin=true
+            }
+    },
     methods:{
         showMsg(){
+
             this.$store.commit('showMsg',!this.$store.state.showMsg)
+
         },
         showLogin(){
-            this.$store.state.showLogin=!this.$store.state.showLogin
+
+            if (localStorage.getItem("LoginAcc")==null) {
+                this.$store.localLogin=false
+            }else{
+                this.$store.localLogin=true
+            } 
+
+
+            // console.log(this.$store.localLogin);
+            this.$store.state.showLogin=true
+
         }
     }
 }

@@ -1,19 +1,32 @@
 <template>
     <div class="login br" v-if="this.$store.state.showLogin">
         <span class="close" @click="switchShow">X</span>
-        <div class="account br">
-            <span>帐号：</span><input type="text" class="br" placeholder="输入账号" v-model="regAccount">
+
+        <div class="showLogin" v-if="!this.$store.localLogin">
+
+            <div class="account br">
+                <span>帐号：</span><input type="text" class="br" placeholder="输入账号" v-model="regAccount">
+            </div>
+
+            <div class="password br">
+                <span>密码：</span><input type="password" class="br" placeholder="输入密码" v-model="regPassword">
+            </div>
+
+            <div class="switchBtn br" @click="switchB">切换</div>
+            <div class="loginBtn br" v-if="isLoginBtn" @click="login">登录</div>
+            <div class="registerBtn br" v-if="!isLoginBtn" @click="reg">注册</div>
+            <div class="welcome">Welcome!</div>
+
+            <div class="toast" v-show="toastShow">
+                {{toastText}}
+            </div>
         </div>
-        <div class="password br">
-            <span>密码：</span><input type="password" class="br" placeholder="输入密码">
+
+        <div class="showExit" v-if="this.$store.localLogin">
+            <div class="exitBtn br" @click="loginOut">退出</div>
         </div>
-        <div class="switchBtn br" @click="switchB">切换</div>
-        <div class="loginBtn br" v-if="isLogin">登录</div>
-        <div class="registerBtn br" v-if="!isLogin" @click="reg">注册</div>
-        <div class="welcome">Welcome!</div>
-        <div class="toast" v-show="toastShow">
-            {{toastText}}
-        </div>
+
+        
     </div>
 </template>
 
@@ -22,65 +35,152 @@ export default {
     name:'',
     data(){
         return{
-            isLogin:false,
+            isLoginBtn:false,
             regAccount:'',
+            regPassword:'',
             toastText:'',
             toastShow: false,
-            alreadyAcc:true,
             info:{
-                id: '',
+                id: "",
                 account: "",
                 password: "",
                 nickname: "",
-                permission: ""
+                permission: "user"
             }
         }
     },
+    created(){
+        if (localStorage.getItem("LoginAcc")==null) {
+                this.$store.localLogin=false
+            }else{
+                this.$store.localLogin=true
+            }        
+        // console.log("checkLogin=>"+this.$store.localLogin);
+
+    },
     methods:{
         switchB(){
-            this.isLogin=!this.isLogin
+            this.isLoginBtn=!this.isLoginBtn
         },
         switchShow(){
             this.$store.state.showLogin=!this.$store.state.showLogin
-        },
-        reg(){
-            console.log("当前帐号=>"+this.regAccount)
 
-            if(this.regAccount==''){
+            if (localStorage.getItem("LoginAcc")==null) {
+                this.$store.localLogin=false
+            }else{
+                this.$store.localLogin=true
+            } 
+        },
+
+        // 注册方法
+        reg(){
+            let alreadyAcc;
+
+            // console.log("当前帐号=>"+this.regAccount)
+
+            if(this.isNull(this.regAccount)){
 
                 this.toast('输入账号为空')
 
-            }else if(this.regAccount!=''){
+            }else{
 
-                this.$axios.get("http://localhost:8081/user/searchAcc/"+this.regAccount).then(res=>{
-                    console.log("haveAcc=>"+res);
-                    if(res.data.length==0){
-                        this.alreadyAcc=false;
-                    }else{
-                        this.alreadyAcc=true;
-                    }
-                    console.log("alreadyAcc==>"+this.alreadyAcc);
-                }).catch(err=>{
-                    console.log("查找错误："+err)
-                    this.toast('查找错误')
-                }) 
+                if (this.isNull(this.regPassword)) {
 
-                if (this.alreadyAcc) {
-
-                    this.toast('账号已存在')
+                    this.toast('输入密码为空')
 
                 }else{
-                    this.info.account=this.regAccount
-                    let json=JSON.stringify(this.info)
-                    this.$axios.post("http://localhost:8081/user/add",json).then(res=>{
-                        console.log("成功注册=>"+res.data)
-                        this.toast('成功注册')
+
+                    this.$axios.get("http://localhost:8081/user/searchAcc/"+this.regAccount).then(res=>{
+                        // console.log(res.data.length);
+
+                        if(res.data.length==0){
+
+                            alreadyAcc=false;
+
+                        }else{
+
+                            alreadyAcc=true;
+
+                        }
+                        // console.log("alreadyAcc==>"+alreadyAcc);
+
+                        if (alreadyAcc) {
+
+                            this.toast('账号已存在')
+
+                        }else{
+
+                            this.info.account=this.regAccount
+                            this.info.password=this.regPassword
+                            // console.log(this.info);
+                            let json=JSON.parse(JSON.stringify(this.info))
+                            // console.log(json);
+
+                            this.$axios.post("http://localhost:8081/user/add",json).then(()=>{
+                                // console.log("成功注册=>"+res.data)
+                                this.toast('成功注册')
+                            }).catch(err=>{
+                                console.log("注册错误："+err)
+                                this.toast('注册错误')
+                            }) 
+
+                        }
+
                     }).catch(err=>{
-                        console.log("注册错误："+err)
-                        this.toast('注册错误')
+
+                        console.log("查找错误："+err)
+                        this.toast('帐号已存在')
+
                     }) 
                 }
             }      
+        },
+        login(){
+
+            // console.log("当前帐号=>"+this.regAccount)
+
+            if(this.isNull(this.regAccount)){
+
+                this.toast('输入账号为空')
+
+            }else{
+
+                if (this.isNull(this.regPassword)) {
+
+                    this.toast('输入密码为空')
+
+                }else{
+
+                    this.$axios.get("http://localhost:8081/user/searchAcc/"+this.regAccount).then(res=>{
+
+                        // console.log(res.data[0]);
+
+                        if (res.data[0].account==this.regAccount && res.data[0].password==this.regPassword) {
+                            
+                            this.toast('登陆成功')
+                            
+                        }else{
+
+                            this.toast('帐号或密码不正确')
+                        }
+
+                    }).catch(err=>{
+
+                        console.log("查找错误："+err)
+                        this.toast('账号不存在')
+
+                    }) 
+                }
+            } 
+            // 登陆成功关闭登录界面
+            this.$store.state.showLogin=false
+
+            localStorage.setItem("LoginAcc", this.regAccount)
+        },
+        loginOut(){
+            localStorage.removeItem("LoginAcc")
+            this.$store.localLogin=false
+            this.$store.state.showLogin=false
         },
         toast (e) {
             let self = this
@@ -90,7 +190,14 @@ export default {
                 self.toastShow = false
             }, 1500)
         },
-    },
+        isNull(values){
+            if(values==''){
+                return true
+            }else{
+                return false
+            }
+        }
+    }
 }
 </script>
 
@@ -229,5 +336,25 @@ span:hover{
     line-height: 45px;
     padding: 0 15px;
     max-width: 150px;
-  }
+}
+
+.showExit{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.exitBtn{
+    width: 25%;
+    height: 50px;
+    line-height: 50px;
+    background-color: rgba(146,151,179,13%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 20%);
+}
+.exitBtn:hover{
+    cursor: pointer;
+}
 </style>

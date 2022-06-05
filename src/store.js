@@ -8,6 +8,7 @@ export default new Vuex.Store({
         backBtnVisible:false,
         showMsg:false,
         showLogin:false,
+        localLogin:false,
         searchId:[],
         picList:[
             {
