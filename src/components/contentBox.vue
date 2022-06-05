@@ -15,7 +15,9 @@ export default {
   name: 'contentBox',
   data () {
     return{
-      getArt:{}
+      getArt:{
+        pic:[]
+      }
     }
   },
   props :[ 
@@ -25,8 +27,18 @@ export default {
 
   },
   created(){
-    this.getArt=this.$store.state.article[this.postId]
-    this.getArt.newContent=this.getArt.content.replace(/\n/g, '<br>')
+    // this.getArt=this.$store.state.article[this.postId]
+    // this.getArt.newContent=this.getArt.content.replace(/\n/g, '<br>')
+    // console.log(this.getArt.pic);
+
+    this.$axios.get("http://localhost:8081/art/search/"+this.postId).then(res=>{
+      this.getArt=res.data[0]
+      this.getArt.newContent=this.getArt.content.replace(/\n/g, '<br>')
+      this.getArt.pic=this.getArt.pic.replace('[','').replace(']','').replaceAll("'",'').split(',')
+      // console.log(this.getArt.pic);
+    }).catch(err=>{
+      console.log("错误："+err)
+    }) 
   }
 }
 </script>

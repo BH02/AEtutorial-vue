@@ -7,6 +7,7 @@ export default new Vuex.Store({
     state:{
         backBtnVisible:false,
         showMsg:false,
+        showLogin:false,
         searchId:[],
         picList:[
             {

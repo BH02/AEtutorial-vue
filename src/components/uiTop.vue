@@ -10,12 +10,13 @@
 import backBtn from '../components/backBtn.vue'
 import searchBar from '../components/searchBar.vue'
 import userInfo from '../components/userInfo.vue'
+
 export default ({
     name:'uiTop',
     components:{
         searchBar,
         userInfo,
-        backBtn
+        backBtn,
     },
     created(){
         this.$store.commit('showBackBtn',false)

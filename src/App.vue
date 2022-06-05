@@ -56,7 +56,7 @@
     </header>
     <div class="blo"></div>
     <router-view/>
-    
+    <login></login>
     <footer>
         <div class="box">           
             <span>Copyright © 2021 </span><a href="https://github.com/BH02">BH02</a>
@@ -101,6 +101,7 @@
 <script>
 import { Slide } from 'vue-burger-menu'  // import the CSS transitions you wish to use, in this case we are using `Slide`
 import Vue from 'vue'
+import login from './components/login.vue'
 
 Vue.prototype.eventBus = new Vue();
 export default {
@@ -109,7 +110,8 @@ export default {
         }
     },
     components: {
-        Slide
+        Slide,
+        login
     }
 }
 
