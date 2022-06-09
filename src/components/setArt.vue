@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <div>
         <div class="data">
             <div class="singleArt overEcli top">
                 <div class="id">ID</div>
@@ -26,12 +26,18 @@
             <span @click="add" class="btn">+</span>
             页
         </div>
+        <editWindow v-if="this.$store.state.showEdit"></editWindow>
     </div>
 </template>
 
 <script>
+import editWindow from '../components/editWindows.vue'
+
 export default {
     naem:'setArt',
+    components:{
+        editWindow
+    },
     data(){
         return{
             page:1,
@@ -66,7 +72,9 @@ export default {
             this.getArtPage()
         },
         editArt(id){
-            console.log(id);
+            this.$store.state.showEdit=true
+            this.$store.state.editId=id
+            // console.log(this.$store.state.editId);
         }
     },
     watch:{

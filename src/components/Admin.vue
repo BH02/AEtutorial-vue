@@ -2,13 +2,13 @@
     <div class="bigbox">
         <div class="box">
             <router-link to="/Set/setArt" class="url">
-                <span>Art</span>
+                <span>文章</span>
             </router-link>
             <router-link to="/Set/setUser" class="url">
-                <span>User</span>
+                <span>用户</span>
             </router-link>
             <router-link to="/Set/setPic" class="url">
-                <span>Pic</span>
+                <span>图片</span>
             </router-link>
         </div>
         <router-view></router-view>
