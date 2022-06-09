@@ -47,7 +47,8 @@
         </g>
 </svg>
         </router-link>
-        <img src="../assets/jill.png" @click="showLogin">
+        <!-- <img src="../assets/jill.png" @click="showLogin"> -->
+        <div class="touxiang" @click="showLogin">{{this.loginId}}</div>
         <div class="showMsg" v-if="$store.state.showMsg">
             <div class="msg" v-for="(getMsg,i) in Msgs" :key="i">
                 <img :src="getMsg.pic" alt="" class="msgPic">
@@ -79,6 +80,7 @@ export default {
                     msg:'今天Boss发了奖金。'
                 }
             ],
+            loginId:'请登录'
         }
     },
     created(){
@@ -86,16 +88,23 @@ export default {
                 this.$store.state.localLogin=false
             }else{
                 this.$store.state.localLogin=true
+                this.loginId=localStorage.getItem('LoginAcc')
             }
+            
         this.$store.state.permission=localStorage.getItem('accountPer')
+        // console.log(localStorage.getItem('LoginAcc'));
     },
     mounted(){
-        this.$axios.get("http://localhost:8081/user/searchAcc/"+localStorage.getItem('accountPer')).then(res=>{
+        this.$axios.get("http://localhost:8081/user/searchAcc/"+localStorage.getItem('LoginAcc')).then(res=>{
+            // console.log(res.data[0]);
             if (res.data[0].permission=='admin') {
                 this.$store.state.permission=true
             } else {
                 this.$store.state.permission=false
             }
+        }).catch(err=>{
+            console.log(err);
+            this.$store.state.permission=false
         })
         // console.log(this.permission);
     },
@@ -150,13 +159,20 @@ span{
     align-items: center;
     justify-content: center;
 }
-img{
+img,.touxiang{
     width: 40px;
     height: 40px;
     border-radius: 50%;
     border: 2px solid white;
     margin-left: 20px;
     min-width: 40px;
+    line-height: 40px;
+    text-align: center;
+    overflow:hidden; /*超出部分隐藏*/
+    white-space:nowrap; /*让文本强制在一行不换行*/
+    text-overflow:none;/*显示省略号来代表被修剪的文本*/
+    color: rgba(255, 255, 255, 20%);
+
 }
 .showMsg{
     width: 200px;

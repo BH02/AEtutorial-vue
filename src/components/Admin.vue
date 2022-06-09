@@ -15,12 +15,6 @@
     </div>
 </template>
 
-<script>
-export default {
-    
-}
-</script>
-
 <style scoped>
 .url{
     text-decoration: none;

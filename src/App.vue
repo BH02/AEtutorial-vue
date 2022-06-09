@@ -95,6 +95,8 @@
       <img src="./assets/output.png" alt="">
       <img src="./assets/output2.png" alt="">
     </div>
+    <editWindow v-if="this.$store.state.showEdit"></editWindow>
+    <addWindow v-if="this.$store.state.showAdd"></addWindow>
   </div>
 </template>
 
@@ -102,6 +104,8 @@
 import { Slide } from 'vue-burger-menu'  // import the CSS transitions you wish to use, in this case we are using `Slide`
 import Vue from 'vue'
 import login from './components/login.vue'
+import editWindow from './components/editWindows.vue'
+import addWindow from './components/addWindows.vue'
 
 Vue.prototype.eventBus = new Vue();
 export default {
@@ -111,7 +115,9 @@ export default {
     },
     components: {
         Slide,
-        login
+        login,
+        editWindow,
+        addWindow
     }
 }
 

@@ -25,19 +25,15 @@
             <input type="text" class="pageNum btn" v-model="page">
             <span @click="add" class="btn">+</span>
             页
+            <span @click="showAdd">添加新文章</span>
         </div>
-        <editWindow v-if="this.$store.state.showEdit"></editWindow>
     </div>
 </template>
 
 <script>
-import editWindow from '../components/editWindows.vue'
 
 export default {
     naem:'setArt',
-    components:{
-        editWindow
-    },
     data(){
         return{
             page:1,
@@ -68,13 +64,17 @@ export default {
             })
         },
         delArt(id){
-            this.$axios.delete("http://localhost:8081/art/del/"+id)
-            this.getArtPage()
+            this.$axios.delete("http://localhost:8081/art/del/"+id).then(()=>{
+                this.getArtPage()
+            })
         },
         editArt(id){
             this.$store.state.showEdit=true
             this.$store.state.editId=id
             // console.log(this.$store.state.editId);
+        },
+        showAdd(){
+            this.$store.state.showAdd=true
         }
     },
     watch:{

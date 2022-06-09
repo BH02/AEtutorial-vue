@@ -165,6 +165,7 @@ export default {
                                 this.$store.state.permission=false
                                 localStorage.setItem("accountPer", false)
                             }
+                            console.log(this.$store.state.permission);
                             
                         }else{
 
@@ -186,6 +187,7 @@ export default {
             this.$store.state.showLogin=false
             //重新加载
             // location.reload()
+            this.$router.go(0);
         },
         loginOut(){
             localStorage.removeItem("LoginAcc")
@@ -195,6 +197,7 @@ export default {
             this.$store.state.permission=false
 
             // location.reload()
+            this.$router.go(0);
         },
         toast (e) {
             let self = this

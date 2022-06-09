@@ -12,6 +12,8 @@ export default new Vuex.Store({
         isAdmin:false,
         permission:false,
         showEdit:false,
+        showAdd:false,
+        accID:'',
         editId:null,
         searchId:[],
         picList:[

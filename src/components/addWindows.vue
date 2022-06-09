@@ -14,7 +14,7 @@
 
 <script>
 export default {
-    name:'editWindow',
+    name:'addWindow',
     data(){
         return{
             json:{
@@ -26,19 +26,13 @@ export default {
             }
         }
     },
-    created(){
-        this.$axios.get("http://localhost:8081/art/search/"+this.$store.state.editId).then(res=>{
-            // console.log(res.data[0]);
-            this.json=res.data[0]
-        })
-    },
     methods:{
         close(){
-            this.$store.state.showEdit=false
+            this.$store.state.showAdd=false
         },
         submitArt(){
             this.$axios.post("http://localhost:8081/art/add",this.json).then(()=>{
-                this.$store.state.showEdit=false
+                this.$store.state.showAdd=false
                 location.reload()
             }).catch(err=>{
                 console.log(err);
