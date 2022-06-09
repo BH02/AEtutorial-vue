@@ -52,6 +52,7 @@ export default {
 }
 .transparent{
   width: 90vw;
+  min-height: 800px;
   margin-left: 5vw;
   background-color: rgba(16,18,27,40%);
   backdrop-filter: blur(20px);
