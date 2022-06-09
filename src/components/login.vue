@@ -2,7 +2,7 @@
     <div class="login br" v-if="this.$store.state.showLogin">
         <span class="close" @click="switchShow">X</span>
 
-        <div class="showLogin" v-if="!this.$store.localLogin">
+        <div class="showLogin" v-if="!this.$store.state.localLogin">
 
             <div class="account br">
                 <span>帐号：</span><input type="text" class="br" placeholder="输入账号" v-model="regAccount">
@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <div class="showExit" v-if="this.$store.localLogin">
+        <div class="showExit" v-if="this.$store.state.localLogin">
             <div class="exitBtn br" @click="loginOut">退出</div>
         </div>
 
@@ -51,9 +51,9 @@ export default {
     },
     created(){
         if (localStorage.getItem("LoginAcc")==null) {
-                this.$store.localLogin=false
+                this.$store.state.localLogin=false
             }else{
-                this.$store.localLogin=true
+                this.$store.state.localLogin=true
             }        
         // console.log("checkLogin=>"+this.$store.localLogin);
 
@@ -66,9 +66,9 @@ export default {
             this.$store.state.showLogin=!this.$store.state.showLogin
 
             if (localStorage.getItem("LoginAcc")==null) {
-                this.$store.localLogin=false
+                this.$store.state.localLogin=false
             }else{
-                this.$store.localLogin=true
+                this.$store.state.localLogin=true
             } 
         },
 
@@ -156,8 +156,15 @@ export default {
                         // console.log(res.data[0]);
 
                         if (res.data[0].account==this.regAccount && res.data[0].password==this.regPassword) {
-                            
                             this.toast('登陆成功')
+                            if (res.data[0].permission=='admin') {
+                                this.$store.state.permission=true
+                                localStorage.setItem("accountPer", true)
+
+                            } else {
+                                this.$store.state.permission=false
+                                localStorage.setItem("accountPer", false)
+                            }
                             
                         }else{
 
@@ -171,16 +178,23 @@ export default {
 
                     }) 
                 }
-            } 
-            // 登陆成功关闭登录界面
-            this.$store.state.showLogin=false
+            }             
 
             localStorage.setItem("LoginAcc", this.regAccount)
+            // localStorage.setItem("accountPer", this.$store.state.permission)
+            //登陆成功关闭登录界面
+            this.$store.state.showLogin=false
+            //重新加载
+            // location.reload()
         },
         loginOut(){
             localStorage.removeItem("LoginAcc")
-            this.$store.localLogin=false
+            localStorage.removeItem("accountPer")
+            this.$store.state.localLogin=false
             this.$store.state.showLogin=false
+            this.$store.state.permission=false
+
+            // location.reload()
         },
         toast (e) {
             let self = this

@@ -64,6 +64,26 @@ const routes = [
     path: '/testPage',
     name: 'testPage',
     component: () => import('../views/testPage.vue')
+  },
+  {
+    path: '/Set',
+    name: 'Set',
+    redirect:'/Set/setArt',
+    component: () => import('../views/Set.vue'),
+    children:[
+      {
+        path: 'setArt',
+        component: () => import('../components/setArt.vue')
+      },
+      {
+        path: 'setUser',
+        component: () => import('../components/setUser.vue')
+      },
+      {
+        path: 'setPic',
+        component: () => import('../components/setPic.vue')
+      },
+    ]
   }
 ]
 

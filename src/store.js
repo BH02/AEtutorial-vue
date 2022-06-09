@@ -9,6 +9,8 @@ export default new Vuex.Store({
         showMsg:false,
         showLogin:false,
         localLogin:false,
+        isAdmin:false,
+        permission:false,
         searchId:[],
         picList:[
             {
