@@ -77,7 +77,7 @@ export default {
   display: none;
 }
 .big{
-    font-size: 500px;
+    font-size: 200px;
     color: white;
 }
 </style>

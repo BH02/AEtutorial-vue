@@ -31,7 +31,7 @@ export default {
             this.$store.state.showAdd=false
         },
         submitArt(){
-            this.$axios.post("http://localhost:8081/art/add",this.json).then(()=>{
+            this.$axios.post("/api/art/add",this.json).then(()=>{
                 this.$store.state.showAdd=false
                 location.reload()
             }).catch(err=>{

@@ -27,7 +27,7 @@ export default {
         }
     },
     created(){
-        this.$axios.get("http://localhost:8081/art/search/"+this.$store.state.editId).then(res=>{
+        this.$axios.get("/api/art/search/"+this.$store.state.editId).then(res=>{
             // console.log(res.data[0]);
             this.json=res.data[0]
         })
@@ -37,7 +37,7 @@ export default {
             this.$store.state.showEdit=false
         },
         submitArt(){
-            this.$axios.post("http://localhost:8081/art/add",this.json).then(()=>{
+            this.$axios.post("/api/art/add",this.json).then(()=>{
                 this.$store.state.showEdit=false
                 location.reload()
             }).catch(err=>{

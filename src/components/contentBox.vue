@@ -31,7 +31,7 @@ export default {
     // this.getArt.newContent=this.getArt.content.replace(/\n/g, '<br>')
     // console.log(this.getArt.pic);
 
-    this.$axios.get("http://localhost:8081/art/search/"+this.postId).then(res=>{
+    this.$axios.get("/api/art/search/"+this.postId).then(res=>{
       this.getArt=res.data[0]
       this.getArt.newContent=this.getArt.content.replace(/\n/g, '<br>')
       this.getArt.pic=this.getArt.pic.replace('[','').replace(']','').replaceAll("'",'').split(',')

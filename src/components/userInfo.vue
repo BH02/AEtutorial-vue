@@ -95,7 +95,7 @@ export default {
         // console.log(localStorage.getItem('LoginAcc'));
     },
     mounted(){
-        this.$axios.get("http://localhost:8081/user/searchAcc/"+localStorage.getItem('LoginAcc')).then(res=>{
+        this.$axios.get("/api/user/searchAcc/"+localStorage.getItem('LoginAcc')).then(res=>{
             // console.log(res.data[0]);
             if (res.data[0].permission=='admin') {
                 this.$store.state.permission=true

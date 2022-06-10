@@ -55,7 +55,7 @@ export default {
             }
         },
         getArtPage(){
-            this.$axios.get("http://localhost:8081/art/page?pageNum="+this.page+"&pageSize=10").then(res=>{
+            this.$axios.get("/api/art/page?pageNum="+this.page+"&pageSize=10").then(res=>{
                 this.articleList=res.data
 
                 if(res.data==0){
@@ -64,7 +64,7 @@ export default {
             })
         },
         delArt(id){
-            this.$axios.delete("http://localhost:8081/art/del/"+id).then(()=>{
+            this.$axios.delete("/api/art/del/"+id).then(()=>{
                 this.getArtPage()
             })
         },

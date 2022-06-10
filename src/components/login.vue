@@ -90,7 +90,7 @@ export default {
 
                 }else{
 
-                    this.$axios.get("http://localhost:8081/user/searchAcc/"+this.regAccount).then(res=>{
+                    this.$axios.get("/api/user/searchAcc/"+this.regAccount).then(res=>{
                         // console.log(res.data.length);
 
                         if(res.data.length==0){
@@ -116,7 +116,7 @@ export default {
                             let json=JSON.parse(JSON.stringify(this.info))
                             // console.log(json);
 
-                            this.$axios.post("http://localhost:8081/user/add",json).then(()=>{
+                            this.$axios.post("/api/user/add",json).then(()=>{
                                 // console.log("成功注册=>"+res.data)
                                 this.toast('成功注册')
                             }).catch(err=>{
@@ -151,7 +151,7 @@ export default {
 
                 }else{
 
-                    this.$axios.get("http://localhost:8081/user/searchAcc/"+this.regAccount).then(res=>{
+                    this.$axios.get("/api/user/searchAcc/"+this.regAccount).then(res=>{
 
                         // console.log(res.data[0]);
 
