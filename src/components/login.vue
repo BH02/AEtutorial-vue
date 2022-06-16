@@ -307,6 +307,7 @@ span:hover{
     top: 70%;
     left: 55%;
     user-select:none;/*清除双击选中文本*/
+    cursor: pointer;
 }
 .registerBtn:hover5,.loginBtn:hover{
     cursor: default;
@@ -322,6 +323,7 @@ span:hover{
     top: 70%;
     left: 40%;
     user-select:none;/*清除双击选中文本*/
+    cursor: pointer;
 }
 .switchBtn:hover{
     cursor: default;
