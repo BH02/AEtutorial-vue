@@ -1,7 +1,7 @@
 <template>
   <div class="conBox br">
     <div class="top">
-      <img class="pic br" :src="getArt.pic[0]">
+      <img class="pic br" :src="getArt.pic[0]" alt="无">
       <div class="title br overEcli">{{getArt.title}}</div>
     </div>   
     <div class="words" v-html="getArt.newContent"></div>
@@ -80,6 +80,9 @@ export default {
   margin-right: 10px;
   border: 1px solid rgba(255, 255, 255, 50%);
   min-width: 80px;
+  color: #faf9fb;
+  text-align: center;
+  line-height: 80px;
 }
 .title{
   width: 70%;

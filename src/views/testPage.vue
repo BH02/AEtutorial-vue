@@ -27,16 +27,18 @@ export default {
   },
   data(){
     return{
-      artId:[3,5,16],
+      artId:[],
       picId:[]
     }
   },
   mounted(){
-    // this.$axios.get("/api/test").then(res=>{
-    //   console.log(res.data)
-    // }).catch(err=>{
-    //   console.log(err)
-    // }) 
+    this.$axios.get("/api/art/news").then(res=>{
+      console.log(res)
+      this.artId = res.data
+      console.log(this.artId)
+    }).catch(err=>{
+      console.log(err)
+    }) 
   }
 }
 </script>
