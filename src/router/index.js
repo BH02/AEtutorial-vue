@@ -83,6 +83,10 @@ const routes = [
         path: 'setPic',
         component: () => import('../components/setPic.vue')
       },
+      {
+        path: 'setUserAd',
+        component: () => import('../components/setUserAd.vue')
+      },
     ]
   }
 ]

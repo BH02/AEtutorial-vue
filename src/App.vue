@@ -97,6 +97,10 @@
     </div>
     <editWindow v-if="this.$store.state.showEdit"></editWindow>
     <addWindow v-if="this.$store.state.showAdd"></addWindow>
+    <editUser v-if="this.$store.state.showEditUser"></editUser>
+    <addUser v-if="this.$store.state.showAddUser"></addUser>
+    <editPic v-if="this.$store.state.showEditPic"></editPic>
+    <addPic v-if="this.$store.state.showAddPic"></addPic>
   </div>
 </template>
 
@@ -106,6 +110,10 @@ import Vue from 'vue'
 import login from './components/login.vue'
 import editWindow from './components/editWindows.vue'
 import addWindow from './components/addWindows.vue'
+import editUser from './components/editUser.vue'
+import addUser from './components/addUser.vue'
+import editPic from './components/editPic.vue'
+import addPic from './components/addPic.vue'
 
 Vue.prototype.eventBus = new Vue();
 export default {
@@ -117,7 +125,11 @@ export default {
         Slide,
         login,
         editWindow,
-        addWindow
+        addWindow,
+        editUser,
+        addUser,
+        editPic,
+        addPic
     }
 }
 

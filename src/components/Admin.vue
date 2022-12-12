@@ -4,7 +4,7 @@
             <router-link to="/Set/setArt" class="url">
                 <span>文章</span>
             </router-link>
-            <router-link to="/Set/setUser" class="url">
+            <router-link to="/Set/setUserAd" class="url">
                 <span>用户</span>
             </router-link>
             <router-link to="/Set/setPic" class="url">

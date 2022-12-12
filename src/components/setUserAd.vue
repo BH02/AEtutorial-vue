@@ -3,15 +3,17 @@
         <div class="data">
             <div class="singleArt overEcli top">
                 <div class="id">ID</div>
-                <div class="title">标题</div>
-                <div class="content">内容</div>
+                <div class="title">账户</div>
+                <div class="content">昵称</div>
+                <div class="permission">权限</div>
                 <div class="apiBtn">操作</div>
             </div>
             <div v-for="(article,index) in articleList" :key="index">
                 <div class="singleArt">
                     <div class="id">{{article.id}}</div>
-                    <div class="title overEcli">{{article.src}}</div>
-                    <div class="content overEcli">{{article.content}}</div>
+                    <div class="title overEcli">{{article.account}}</div>
+                    <div class="content overEcli">{{article.nickname}}</div>
+                    <div class="permission overEcli">{{article.permission}}</div>
                     <div class="apiBtn">
                         <div class="edit" @click="editArt(article.id)">编辑</div>
                         <div class="del" @click="delArt(article.id)">删除</div>
@@ -25,14 +27,14 @@
             <input type="text" class="pageNum btn" v-model="page">
             <span @click="add" class="btn">+</span>
             页
-            <span @click="showAdd">添加新图片</span>
+            <span @click="showAdd">添加新用户</span>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    naem:'setPic',
+    naem:'setUserAd',
     data(){
         return{
             page:1,
@@ -54,7 +56,7 @@ export default {
             }
         },
         getArtPage(){
-            this.$axios.get("/api/pic/page?pageNum="+this.page+"&pageSize=10").then(res=>{
+            this.$axios.get("/api/user/page?pageNum="+this.page+"&pageSize=10").then(res=>{
                 this.articleList=res.data
 
                 if(res.data==0){
@@ -63,17 +65,17 @@ export default {
             })
         },
         delArt(id){
-            this.$axios.delete("/api/pic/del/"+id).then(()=>{
+            this.$axios.delete("/api/user/del/"+id).then(()=>{
                 this.getArtPage()
             })
         },
         editArt(id){
-            this.$store.state.showEditPic=true
+            this.$store.state.showEditUser=true
             this.$store.state.editId=id
             // console.log(this.$store.state.editId);
         },
         showAdd(){
-            this.$store.state.showAddPic=true
+            this.$store.state.showAddUser=true
         }
     },
     watch:{
@@ -129,13 +131,13 @@ input{
     border-right: 0px;
 }
 .id{
-    width: 5vw;
+    width: 10vw;
 }
 .title{
-    width: 17vw;
+    width: 30vw;
 }
 .content{
-    width: 58vw;
+    width: 30vw;
 }
 .apiBtn{
     width: 10vw;
@@ -145,6 +147,9 @@ input{
     text-align: center;
     align-items: center;
     justify-content: center;
+}
+.permission{
+    width:15vw
 }
 .edit{
     font-size: 2vh;

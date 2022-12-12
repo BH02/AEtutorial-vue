@@ -10,8 +10,8 @@
     <div class="transparent br" v-if="!this.$store.state.permission">
       <uiTop></uiTop>
       <uiSec msg='用户设置'></uiSec>
-      <div class="content br big">
-        没写
+      <div class="content br">
+        <setUser></setUser>
       </div>
     </div>
   </div>
@@ -21,13 +21,15 @@
 import uiTop from '../components/uiTop.vue'
 import uiSec from '../components/uiSec.vue'
 import Admin from '../components/Admin.vue'
+import setUser from '../components/setUser.vue'
 
 export default {
   name: 'testPage',
   components:{
     uiTop,
     uiSec,
-    Admin
+    Admin,
+    setUser
   },
   data(){
     return{
